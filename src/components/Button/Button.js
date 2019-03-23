@@ -4,7 +4,7 @@ import { StyledButton } from './styled'
 
 const Button = props => {
   return (
-    <StyledButton position={props.position}>
+    <StyledButton { ...props } position={props.position}>
       {props.children}
     </StyledButton>
   )
