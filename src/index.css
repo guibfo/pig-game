@@ -5,6 +5,9 @@
 }
 
 body {
+  background-color: #c5b5a6;
+  font-family: Lato;
+  font-weight: 300;
   margin: 0;
   padding: 0;
 }
