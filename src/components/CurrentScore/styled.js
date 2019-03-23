@@ -12,7 +12,8 @@ export const Box = styled.div`
 export const Label = styled.h4`
   color: #222;
   font-size: 12px;
-  margin-bottom: 10px;
+  font-weight: 300;
+  margin: 0 0 10px;
   text-transform: uppercase;
 `
 
