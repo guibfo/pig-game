@@ -10,7 +10,7 @@ const CurrentScore = props => {
   return (
     <Box>
       <Label>Current</Label>
-      <Score>{props.score || 0}</Score>
+      <Score>{props.score}</Score>
     </Box>
   )
 }

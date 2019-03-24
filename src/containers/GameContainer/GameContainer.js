@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { PlayerPanel, Button, Dice } from '../../components'
 import { Wrapper } from './styled'
 import Roll from 'react-ionicons/lib/IosSync'
 import Hold from 'react-ionicons/lib/IosDownloadOutline'
+import Help from 'react-ionicons/lib/IosHelpCircleOutline'
 
 const GameContainer = () => {
   const [state, setState] = useState({
     dice: 0,
     activePlayer: 0,
+    targetScore: 100,
     players: [
       {
         name: 'Player 1',
@@ -21,6 +23,12 @@ const GameContainer = () => {
       }
     ]
   })
+
+  useEffect(() => {
+    if (state.dice !== 0) {
+      checkWinCondition()
+    }
+  }, [state.players[0].totalScore, state.players[1].totalScore])
 
   const handleDiceRoll = () => {
     const diceValue = Math.floor(Math.random() * 6) + 1
@@ -73,7 +81,32 @@ const GameContainer = () => {
         }
       }
     }))
-    nextPlayer()
+  }
+
+  const checkWinCondition = () => {
+    if (state.players[state.activePlayer].totalScore >= state.targetScore) {
+      console.log(`Player ${state.activePlayer} won the game`)
+    } else {
+      nextPlayer()
+    }
+  }
+
+  const resetGame = () => {
+    setState(state => ({
+      ...state,
+      dice: 0,
+      activePlayer: 0,
+      players: {
+        0: {
+          ...state.players[0],
+          totalScore: 0
+        },
+        1: {
+          ...state.players[1],
+          totalScore: 0
+        }
+      }
+    }))
   }
 
   return (
@@ -87,11 +120,11 @@ const GameContainer = () => {
       {state.dice !== 0 && (
         <Dice value={state.dice} />
       )}
-      <Button onClick={handleDiceRoll} position='70%'>
+      <Button onClick={handleDiceRoll} position={['70%']}>
         <Roll color='#eb4d4d' fontSize='32px' />
         Roll dice
       </Button>
-      <Button onClick={handleSaveScore} position='80%'>
+      <Button onClick={handleSaveScore} position={['80%']}>
         <Hold color='#eb4d4d' fontSize='32px' />
         Hold
       </Button>
@@ -101,6 +134,9 @@ const GameContainer = () => {
         totalScore={state.players[1].totalScore}
         currentScore={state.players[1].currentScore}
       />
+      <Button position={['90%', '95%']}>
+        <Help color='#eb4d4d' fontSize='40px' />
+      </Button>
     </Wrapper>
   )
 }
