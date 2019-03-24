@@ -11,7 +11,7 @@ const Button = props => {
 }
 
 Button.propTypes = {
-  position: PropTypes.string.isRequired,
+  position: PropTypes.array.isRequired,
   children: PropTypes.node.isRequired
 }
 

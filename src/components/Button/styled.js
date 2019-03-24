@@ -7,10 +7,10 @@ export const StyledButton = styled.button`
   cursor: pointer;
   font-size: 20px;
   font-weight: 300;
-  left: 50%;
+  left: ${props => props.position[1] || '50%'};
   position: absolute;
   text-transform: uppercase;
-  top: ${props => props.position};
+  top: ${props => props.position[0]};
   transform: translateX(-50%);
   transition: background-color 0.3s, color 0.3s;
   width: 200px;
