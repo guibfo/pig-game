@@ -6,7 +6,7 @@ import {
   Score
 } from './styled'
 
-const CurrentScore = (props) => {
+const CurrentScore = props => {
   return (
     <Box>
       <Label>Current</Label>
