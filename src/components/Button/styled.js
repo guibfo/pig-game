@@ -13,7 +13,6 @@ export const StyledButton = styled.button`
   top: ${props => props.position[0]};
   transform: translateX(-50%);
   transition: background-color 0.3s, color 0.3s;
-  width: 200px;
 
   svg {
     display: inline-block;
