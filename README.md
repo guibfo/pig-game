@@ -35,10 +35,15 @@ You can see a running version of the project at https://guibfo-pig-game.netlify.
 ### Game rules
 
 -Players take turns rolling the dice
+
 -Each player can roll the dice as many times as (s)he wants every turn
+
 -Every roll is added to player's current score
+
 -If the player rolls a '1' his turn is over, he loses all points he accumulated that turn, and he passes the turn to the next player
+
 -A player can choose to 'Hold' his points and pass the turn to the next player
+
 -First to reach target score wins!
 
 ## License
