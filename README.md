@@ -1,6 +1,6 @@
 # The Pig dice game
 
-This is a version of [The Pig dice game](https://en.wikipedia.org/wiki/Pig_(dice_game) built using React
+This is a version of [The Pig dice game](https://en.wikipedia.org/wiki/Pig_(dice_game)) built using React
 
 ## Installation
 
