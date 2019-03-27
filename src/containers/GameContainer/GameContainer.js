@@ -141,7 +141,7 @@ const GameContainer = () => {
   }
 
   const toggleModal = () => {
-    setState({ ...state, showModal: !state.showModal }) // This doesn't work!
+    setState({ ...state, showModal: !state.showModal })
   }
 
   const { activePlayer, players, dice, showModal, targetScore } = state
@@ -150,9 +150,9 @@ const GameContainer = () => {
       <ModalTitle>Game Rules</ModalTitle>
       <ModalText>-Players take turns rolling the dice</ModalText>
       <ModalText>-Each player can roll the dice as many times as (s)he wants every turn</ModalText>
-      <ModalText>-Every roll is added to player's current score</ModalText>
-      <ModalText>-If the player rolls a '1' his turn is over, he loses all points he accumulated that turn, and he passes the turn to the next player</ModalText>
-      <ModalText>-A player can choose to 'Hold' his points and pass the turn to the next player</ModalText>
+      <ModalText>-Every roll is added to player&apos;s current score</ModalText>
+      <ModalText>-If the player rolls a &apos;1&apos; his turn is over, he loses all points he accumulated that turn, and he passes the turn to the next player</ModalText>
+      <ModalText>-A player can choose to &apos;Hold&apos; his points and pass the turn to the next player</ModalText>
       <ModalText>-First to reach target score wins!</ModalText>
     </>
   )
