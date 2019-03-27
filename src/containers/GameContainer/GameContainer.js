@@ -27,13 +27,16 @@ const GameContainer = () => {
     ]
   })
 
+  // Check if a player won every time a total score is changed
   useEffect(() => {
+    // Prevents the check from running on game start
     if (state.dice !== 0) {
       checkWinCondition()
     }
   }, [state.players[0].totalScore, state.players[1].totalScore])
 
   const handleDiceRoll = () => {
+    // Only run if game still have no winner
     if (state.isPlayable) {
       const diceValue = Math.floor(Math.random() * 6) + 1
 
@@ -42,6 +45,7 @@ const GameContainer = () => {
         dice: diceValue
       }))
 
+      // Passes turn to next player if a 1 is rolled
       if (diceValue === 1) {
         nextPlayer()
       } else {
@@ -59,6 +63,7 @@ const GameContainer = () => {
     }
   }
 
+  // Passes the turn to the next player
   const nextPlayer = () => {
     const activePlayer = state.activePlayer === 0 ? 1 : 0
 
@@ -75,7 +80,9 @@ const GameContainer = () => {
     }))
   }
 
+  // Add current round score to total score
   const handleSaveScore = () => {
+    // Only runs if game still have no winner
     if (state.isPlayable) {
       setState(state => ({
         ...state,
@@ -90,6 +97,8 @@ const GameContainer = () => {
     }
   }
 
+  // Check if current player got the target score after holding his points
+  // and passes turn to next player in case he didn't
   const checkWinCondition = () => {
     if (state.players[state.activePlayer].totalScore >= state.targetScore) {
       setState(state => ({
@@ -108,6 +117,7 @@ const GameContainer = () => {
     }
   }
 
+  // Reset application state to start a new game
   const resetGame = () => {
     setState(state => ({
       ...state,
@@ -131,7 +141,9 @@ const GameContainer = () => {
     }))
   }
 
+  // Changes score required to win the game
   const changeTargetScore = (value) => {
+    // Makes the input accept only numbers
     if (/^[0-9\b]+$/.test(value)) {
       setState(state => ({
         ...state,
@@ -145,6 +157,8 @@ const GameContainer = () => {
   }
 
   const { activePlayer, players, dice, showModal, targetScore } = state
+
+  // Setting help Modal content
   const modalContent = (
     <>
       <ModalTitle>Game Rules</ModalTitle>
