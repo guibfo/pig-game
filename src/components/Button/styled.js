@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   border: none;
   color: #555;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   left: ${props => props.position[1] || '50%'};
   position: absolute;
@@ -29,5 +29,17 @@ export const StyledButton = styled.button`
     svg {
       margin-right: 20px;
     }
+  }
+
+  @media (max-width: 1169px) {
+
+    svg {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  @media (min-width: 1170px) {
+    font-size: 20px;
   }
 `

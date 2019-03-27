@@ -4,9 +4,14 @@ export const Box = styled.div`
   background-color: #EB4D4D;
   color: #fff;
   margin: 0 auto;
+  max-width: 100px;
   padding: 12px;
   text-align: center;
-  width: 40%;
+  width: 70%;
+
+  @media (min-width: 1170px) {
+    max-width: 120px;
+  }
 `
 
 export const Label = styled.h4`

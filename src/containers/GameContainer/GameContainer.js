@@ -174,7 +174,7 @@ const GameContainer = () => {
   return (
     <>
       <Wrapper>
-        <Button onClick={resetGame} position={['10%']}>
+        <Button onClick={resetGame} position={['5%']}>
           <NewGameIcon color='#eb4d4d' fontSize='32px' />
           New Game
         </Button>

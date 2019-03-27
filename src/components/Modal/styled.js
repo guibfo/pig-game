@@ -31,16 +31,16 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   left: 50%;
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 95%;
   min-height: 300px;
-  min-width: 500px;
+  max-width: 500px;
   overflow: auto;
   padding: 20px;
   position: absolute;
   top: -50%;
   transform: translate(-50%, -50%);
   transition: top 0.35s ease-in-out;
+  width: 95%;
   z-index: 15;
 `
 
