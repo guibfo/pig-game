@@ -8,6 +8,8 @@ export const StyledButton = styled.button`
   font-size: 16px;
   font-weight: 300;
   left: ${props => props.position[1] || '50%'};
+  line-height: 1.3;
+  min-width: 185px;
   position: absolute;
   text-transform: uppercase;
   top: ${props => props.position[0]};
