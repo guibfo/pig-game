@@ -36,6 +36,11 @@ const GameContainer = () => {
   }, [state.players[0].totalScore, state.players[1].totalScore])
 
   const handleDiceRoll = () => {
+    // Prevent player from rolling if target score is empty
+    if (state.targetScore === '') {
+      alert('You have to set a target score!') // eslint-disable-line
+      return
+    }
     // Only run if game still have no winner
     if (state.isPlayable) {
       const diceValue = Math.floor(Math.random() * 6) + 1
@@ -144,7 +149,8 @@ const GameContainer = () => {
   // Changes score required to win the game
   const changeTargetScore = (value) => {
     // Makes the input accept only numbers
-    if (/^[0-9\b]+$/.test(value)) {
+    // number can't start with 0 and accepts empty string
+    if (/^([1-9][0-9]*)?$/.test(value)) {
       setState(state => ({
         ...state,
         targetScore: value
